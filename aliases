@@ -1,0 +1,37 @@
+# ---------------------
+# General Aliases
+# ---------------------
+alias bash_profile="subl ~/.bash_profile"
+alias ll="ls -la"
+alias rm="rm -i"
+alias b="cd .."
+alias b4="cd ../../../../"
+alias b5="cd ../../../../.."
+alias reload="source ~/.bash_profile"
+alias projects="cd ~/Projects"
+alias make_test="cd ~/Desktop && mkdir testing && cd testing"
+alias be="bundle exec"
+
+# OSX
+alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
+alias hide_files="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
+
+# MySQL
+alias mysql_start="mysql.server start"
+alias mysql_stop="mysql.server stop"
+
+# Rails
+alias rails_open="open http://localhost:3000"
+alias rc="rails c"
+alias rs="rails s"
+alias rg="rails g"
+
+# Node
+alias gulp_init="npm install --save-dev gulp gulp-util && npm init"
+
+# ---------------------
+# Servers
+# ---------------------
+alias ngrok="./ngrok"
+alias python_server="python -m SimpleHTTPServer"
+alias node_server="http-server"

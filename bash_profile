@@ -5,7 +5,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # Execute the prompts
-[[ -f ~/.bash_prompt ]] && source ~/.bash_prompt.local
+[[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 
 # Execute git completion
 [[ -f ~/.git_completion ]] && source ~/.git_completion

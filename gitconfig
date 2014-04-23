@@ -21,6 +21,6 @@
   ui = true
 [core]
   excludesfile = /Users/JC/.gitignore_global
-  editor = nano
+  editor = vi
 [push]
   default = tracking

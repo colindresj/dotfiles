@@ -17,6 +17,10 @@
   github = remote show origin
   update = !git fetch origin && git rebase origin/master
   done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake
+  delete = !sh -c 'git branch -D $1 && git push origin :$1'
+  pr = !sh 'hub pull-request | pbcopy'
+  who = shortlog -n -s --no-merges
+  clean = !git remote prune origin && git gc
 [color]
   ui = true
 [core]

@@ -4,27 +4,30 @@
 [credential]
   helper = osxkeychain
 [alias]
-  undopush = push -f origin HEAD^:master
-  addremove = add . && ls-files --deleted | xargs git rm
   a = add
+  addremove = add . && ls-files --deleted | xargs git rm
   ap = add -p
-  st = status
+  br = branch
+  clean = !git remote prune origin && git gc
   co = checkout
   cob = checkout -b
-  br = branch
-  ri = rebase -i
   cp = cherry-pick --signoff
-  github = remote show origin
-  update = !git fetch origin && git rebase origin/master
+  delete = !sh -c 'git branch -D $1 && git push origin :$1' -
   done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake
-  delete = !sh -c 'git branch -D $1 && git push origin :$1'
-  pr = !sh 'hub pull-request | pbcopy'
+  github = remote show origin
+  head = git log -n1
+  pr = !sh -c 'hub pull-request | pbcopy'
+  ri = rebase -i
+  st = status
+  undopush = push -f origin HEAD^:master
+  update = !git fetch origin && git rebase origin/master
   who = shortlog -n -s --no-merges
-  clean = !git remote prune origin && git gc
 [color]
   ui = true
 [core]
-  excludesfile = /Users/JC/.gitignore_global
-  editor = vi
+  excludesfile = ~/.gitignore_global
+  editor = /usr/bin/vim
+[merge]
+  ff = only
 [push]
   default = tracking

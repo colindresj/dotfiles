@@ -536,6 +536,8 @@ if count(g:vimified_packages, 'javascript')
   Plugin 'thinca/vim-textobj-function-javascript'
 
   au BufNewFile,BufRead *.json set filetype=javascript
+
+  let g:mustache_abbreviations = 1
 endif
 
 " Package: Ctags
@@ -556,9 +558,9 @@ if count(g:vimified_packages, 'snippets')
   Plugin 'SirVer/ultisnips'
   Plugin 'honza/vim-snippets'
 
-  let g:UltiSnipsExpandTrigger='<c-s>'
-  let g:UltiSnipsJumpForwardTrigger='<c-s>'
-  let g:UltiSnipsJumpBackwardTrigger='<c-a>'
+  let g:UltiSnipsExpandTrigger='<tab>'
+  let g:UltiSnipsJumpForwardTrigger='<tab>'
+  let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 endif
 
 " Package: Colour

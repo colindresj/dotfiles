@@ -32,6 +32,5 @@ alias gulp_init="npm install --save-dev gulp gulp-util && npm init"
 # ---------------------
 # Servers
 # ---------------------
-alias ngrok="./ngrok"
 alias python_server="python -m SimpleHTTPServer"
 alias node_server="http-server"

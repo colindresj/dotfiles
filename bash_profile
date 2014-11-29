@@ -14,7 +14,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 # Sublime
 # ---------------------
 # set as the default editor
-export EDITOR="subl -w"
+export EDITOR="mvim"
 
 # ---------------------
 # Postgres

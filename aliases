@@ -1,7 +1,7 @@
 # ---------------------
 # General Aliases
 # ---------------------
-alias bash_profile="subl ~/.bash_profile"
+alias bash_profile="vim ~/.bash_profile"
 alias ll="ls -la"
 alias rm="rm -i"
 alias b="cd .."

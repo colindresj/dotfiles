@@ -50,21 +50,6 @@ title() {
 }
 
 # ---------------------
-# Password Gen and Hashing
-# ---------------------
-passgen() {
-  if [[ $2 ]]; then
-    openssl rand -base64 10 | md5 | head -c$1; echo;
-  else
-    openssl rand -base64 $1 | head -c$1; echo;
-  fi
-}
-
-md5hash() {
-  md5 -qs $1;
-}
-
-# ---------------------
 # Bash History
 # ---------------------
 # Larger bash history (allow 32³ entries; default is 500)

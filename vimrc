@@ -480,6 +480,11 @@ if count(g:vimified_packages, 'rails')
   " wrap selection in erb tags
   let g:surround_45 = "<% \r %>"    " -
   let g:surround_61 = "<%= \r %>"   " =
+
+  map ,. ysiw-
+  map ,> ysiw=
+  vmap ,. c<% <C-R>" %><ESC>
+  vmap ,> c<%= <C-R>" %><ESC>
 endif
 
 " Package: Rspec

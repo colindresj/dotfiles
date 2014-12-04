@@ -6,17 +6,17 @@ export CLICOLOR=1
 # http://geoff.greer.fm/lscolors/
 export LSCOLORS=bxexcxdxbxegedabagacad
 # prompt colors
-BLACK="\e[0;30m"        # Black
-RED="\e[1;31m"          # Red
-ORANGE="\e[0;31m"       # Orange
-GREEN="\e[1;32m"        # Green
-YELLOW="\e[0;33m"       # Yellow
-BLUE="\e[0;34m"         # Blue
-PURPLE="\e[1;35m"       # Purple
-CYAN="\e[0;36m"         # Cyan
-WHITE="\e[0;37m"        # White
+BLACK="\e[0;30m"
+RED="\e[0;31m"
+ORANGE="\e[0;31m"
+GREEN="\e[0;32m"
+YELLOW="\e[0;33m"
+BLUE="\e[0;34m"
+PURPLE="\e[0;35m"
+CYAN="\e[0;36m"
+WHITE="\e[0;37m"
 
-BOLD=""
+BOLD=`tput bold`
 RESET="\033[m"
 
 # -----------------
@@ -102,7 +102,7 @@ prompt_git() {
 style_user="\[${RESET}${WHITE}\]"
 style_path="\[${RESET}${CYAN}\]"
 style_chars="\[${RESET}${WHITE}\]"
-style_branch="${RED}"
+style_branch="${RED}${BOLD}"
 
 PS1="${style_user}\u"                    # Username
 PS1+="${style_path} \w"                  # Working directory

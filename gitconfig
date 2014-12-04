@@ -1,6 +1,6 @@
 [user]
-  name = JC
   email = jorge.e.colindres@gmail.com
+  name = JC
 [credential]
   helper = osxkeychain
 [alias]
@@ -25,8 +25,8 @@
 [color]
   ui = true
 [core]
-  excludesfile = ~/.gitignore_global
   editor = /usr/bin/vim
+  excludesfile = ~/.gitignore_global
 [merge]
   ff = only
 [push]

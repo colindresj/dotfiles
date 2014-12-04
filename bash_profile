@@ -11,9 +11,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 [[ -f ~/.git_completion ]] && source ~/.git_completion
 
 # ---------------------
-# Sublime
+# Editor
 # ---------------------
-# set as the default editor
+# set the default editor
 export EDITOR="mvim"
 
 # ---------------------

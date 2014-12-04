@@ -8,9 +8,9 @@ alias b="cd .."
 alias b4="cd ../../../../"
 alias b5="cd ../../../../.."
 alias reload="source ~/.bash_profile"
-alias projects="cd ~/Projects"
-alias make_test="cd ~/Desktop && mkdir testing && cd testing"
+alias make_test="mkdir ~/Desktop/testing && cd $_"
 alias be="bundle exec"
+alias isp="invoker start Procfile"
 
 # OSX
 alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
@@ -25,9 +25,6 @@ alias rails_open="open http://localhost:3000"
 alias rc="rails c"
 alias rs="rails s"
 alias rg="rails g"
-
-# Node
-alias gulp_init="npm install --save-dev gulp gulp-util && npm init"
 
 # ---------------------
 # Servers

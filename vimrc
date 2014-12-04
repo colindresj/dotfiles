@@ -4,15 +4,17 @@ filetype off
 
 let mapleader = ','
 
+" Shared Config
 let s:shared_config = expand($HOME . '/.vimrc.shared')
 if filereadable(s:shared_config)
   exec ':source ' . s:shared_config
 endif
 
-let s:local_config = expand($HOME . '/.vimrc.local')
-if filereadable(s:local_config)
-  exec ':source ' . s:local_config
-endif
+" Local Config
+" let s:local_config = expand($HOME . '/.vimrc.local')
+" if filereadable(s:local_config)
+"   exec ':source ' . s:local_config
+" endif
 
 " PACKAGE LIST
 " Use this variable inside your local configuration to declare
@@ -30,15 +32,17 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-sensible'
 
+" Shared Bundles
 let s:shared_bundles = expand($HOME . '/.vimrc.bundles.shared')
 if filereadable(s:shared_bundles)
   silent! exec ':source ' . s:shared_bundles
 endif
 
-let s:local_bundles = expand($HOME . '/.vimrc.bundles.local')
-if filereadable(s:local_bundles)
-  silent! exec ':source ' . s:local_bundles
-endif
+" Local Bundles
+" let s:local_bundles = expand($HOME . '/.vimrc.bundles.local')
+" if filereadable(s:local_bundles)
+"   silent! exec ':source ' . s:local_bundles
+" endif
 
 " Package: General
 "

@@ -13,8 +13,3 @@ set guioptions+=c  " use console dialogs
 if has('gui_running')
   set noballooneval
 endif
-
-" Local config
-if filereadable($HOME . '/.gvimrc.local')
-  source ~/.gvimrc.local
-endif

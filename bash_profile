@@ -73,3 +73,15 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 # Cask
 # ---------------------
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# ---------------------
+# Transfer.sh
+# ---------------------
+transfer() {
+  # write to output to tmpfile because of progress bar
+  tmpfile=$( mktemp -t transferXXX )
+  curl --progress-bar --upload-file $1 https://transfer.sh/$(basename $1) >> $tmpfile;
+  cat $tmpfile | pbcopy;
+  cat $tmpfile;
+  rm -f $tmpfile;
+}

@@ -18,6 +18,7 @@
   head = git log -n1
   pr = !sh -c 'hub pull-request | pbcopy'
   ri = rebase -i
+  si = !tig status
   st = status
   undopush = push -f origin HEAD^:master
   update = !git fetch origin && git rebase origin/master

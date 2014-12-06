@@ -710,6 +710,9 @@ cabbrev W w
 cabbrev Q q
 cabbrev Tabe tabe
 
+" exit insert mode
+:inoremap jk <Esc>
+
 " split screen
 :noremap <leader>v :vsp<CR>
 :noremap <leader>h :split<CR>

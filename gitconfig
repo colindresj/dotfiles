@@ -16,7 +16,7 @@
   done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake
   github = remote show origin
   head = git log -n1
-  pr = !sh -c 'hub pull-request | pbcopy'
+  pr = !hub pull-request
   ri = rebase -i
   si = !tig status
   st = status

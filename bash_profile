@@ -66,8 +66,9 @@ rails_composer() { rails new "$@" -m https://raw.github.com/RailsApps/rails-comp
 #----------------------
 # Nodejs
 # ---------------------
-export NODE_PATH="/usr/local/lib/node_modules"
-export PATH="/usr/local/share/npm/bin:$PATH"
+export NVM_DIR="/Users/JC/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
 # ---------------------
 # Cask

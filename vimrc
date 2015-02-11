@@ -21,7 +21,9 @@ endif
 " which package you would like to include
 "
 if ! exists('g:vimified_packages')
-  let g:vimified_packages = ['general', 'fancy', 'coding', 'indent', 'ruby', 'rails', 'rspec', 'javascript', 'ctags', 'snippets', 'colour']
+  let g:vimified_packages = ['general', 'fancy', 'coding', 'indent', 'ruby',
+        \ 'rails', 'rspec', 'javascript', 'clojure', 'ctags', 'snippets',
+        \ 'colour']
 endif
 
 " Vundle
@@ -554,6 +556,13 @@ if count(g:vimified_packages, 'javascript')
   au BufNewFile,BufRead *.json set filetype=javascript
 
   let g:mustache_abbreviations = 1
+endif
+
+" Package: Clojure
+"
+"""""""""""""""""""""""""""""""""""""""
+if count(g:vimified_packages, 'clojure')
+  Plugin 'vim-scripts/VimClojure'
 endif
 
 " Package: Ctags

@@ -33,7 +33,10 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # ---------------------
 bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
-bind 'TAB: menu-complete'
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 # ---------------------
 # Titleize Tabs

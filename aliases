@@ -10,18 +10,12 @@ alias b5="cd ../../../../.."
 alias reload="source ~/.bash_profile"
 alias make_test="mkdir ~/Desktop/testing && cd $_"
 alias be="bundle exec"
-alias isp="invoker start Procfile"
 
 # OSX
 alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hide_files="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 
-# MySQL
-alias mysql_start="mysql.server start"
-alias mysql_stop="mysql.server stop"
-
 # Rails
-alias rails_open="open http://localhost:3000"
 alias rc="rails c"
 alias rs="rails s"
 alias rg="rails g"

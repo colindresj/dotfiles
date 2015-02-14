@@ -24,12 +24,6 @@ PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 export PG_USERNAME="JC"
 
 # ---------------------
-# MySQL
-# ---------------------
-export MYSQL_USERNAME="root"
-export MYSQL_PASS="loginmysql"
-
-# ---------------------
 # Rbenv
 # ---------------------
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -55,7 +49,6 @@ title() {
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
-
 
 #----------------------
 # Rails

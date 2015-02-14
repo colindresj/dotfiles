@@ -34,3 +34,8 @@ alias transfer=transfer
 # ---------------------
 alias python_server="python -m SimpleHTTPServer"
 alias node_server="http-server"
+
+# ---------------------
+# Local custom aliases
+# ---------------------
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local

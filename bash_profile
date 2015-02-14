@@ -86,3 +86,8 @@ transfer() {
   cat $tmpfile;
   rm -f $tmpfile;
 }
+
+# ---------------------
+# Local custom config
+# ---------------------
+[[ -f ~/.bash_profile.local ]] && source ~/.bash_profile.local

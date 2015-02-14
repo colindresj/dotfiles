@@ -10,11 +10,11 @@ if filereadable(s:shared_config)
   exec ':source ' . s:shared_config
 endif
 
-" Local Config
-" let s:local_config = expand($HOME . '/.vimrc.local')
-" if filereadable(s:local_config)
-"   exec ':source ' . s:local_config
-" endif
+" Local Vim Config
+let s:local_config = expand($HOME . '/.vimrc.local')
+if filereadable(s:local_config)
+  exec ':source ' . s:local_config
+endif
 
 " PACKAGE LIST
 " Use this variable inside your local configuration to declare
@@ -41,10 +41,10 @@ if filereadable(s:shared_bundles)
 endif
 
 " Local Bundles
-" let s:local_bundles = expand($HOME . '/.vimrc.bundles.local')
-" if filereadable(s:local_bundles)
-"   silent! exec ':source ' . s:local_bundles
-" endif
+let s:local_bundles = expand($HOME . '/.vimrc.bundles.local')
+if filereadable(s:local_bundles)
+  silent! exec ':source ' . s:local_bundles
+endif
 
 " Package: General
 "
@@ -80,7 +80,7 @@ if count(g:vimified_packages, 'general')
   vmap <leader>a :call AgVisual()<CR>
 
   Plugin 'tpope/vim-surround'
-  " Add $ as a jQuery surround, _ for Underscore.js
+  " Add $ as a jQuery surround, _ for Underscore/Lodash
   autocmd FileType javascript let b:surround_36 = "$(\r)"
         \ | let b:surround_95 = "_(\r)"
 

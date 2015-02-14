@@ -32,3 +32,5 @@
   ff = only
 [push]
   default = tracking
+[include]
+  path = .gitconfig.local

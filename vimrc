@@ -501,9 +501,9 @@ if count(g:vimified_packages, 'rspec')
   Plugin 'thoughtbot/vim-rspec'
 
   let g:rspec_command = "Dispatch rspec {spec}"
-  map <leader>t :call RunCurrentSpecFile()<CR>
-  map <leader>s :call RunNearestSpec()<CR>
-  map <leader>l :call RunLastSpec()<CR>
+  map <leader>cs :call RunCurrentSpecFile()<CR>
+  map <leader>ns :call RunNearestSpec()<CR>
+  map <leader>ls :call RunLastSpec()<CR>
 
   " non-capture dispatch
   let g:debug_rspec_command = "Start rspec {spec}"
@@ -726,8 +726,11 @@ cabbrev Tabe tabe
 " opens an edit command with the path of the currently edited file filled in
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
+" Open a new tab
+:noremap <leader>t :tabe<CR>
+
 " opens a tab edit command with the path of the currently edited file filled in
-" map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " make Y consistent with D and C
 map Y y$

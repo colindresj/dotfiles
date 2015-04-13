@@ -89,6 +89,10 @@ if count(g:vimified_packages, 'general')
   Plugin 'sjl/gundo.vim'
   Plugin 'Peeja/vim-cdo'
 
+  Plugin 'jnegunn/vim-easy-align'
+  vmap <Enter> <Plug>(EasyAlign)
+  nmap ga <Plug>(EasyAlign)
+
   Plugin 'scrooloose/nerdtree'
   let NERDTreeHijackNetrw = 0
   let g:NERDTreeWinSize = 25

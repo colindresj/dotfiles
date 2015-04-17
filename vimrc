@@ -385,7 +385,14 @@ if count(g:vimified_packages, 'coding')
   Plugin 'tpope/vim-abolish'
 
   Plugin 'tpope/vim-fugitive'
-  map <leader>g :Gblame<CR>
+  map <leader>gb :Gblame<CR>
+  map <leader>gs :Gstatus<CR>
+
+  Plugin 'airblade/vim-gitgutter'
+  map <leader>gg :GitGutterToggle<CR>
+  map ]h <Plug>GitGutterNextHunk
+  map [h <Plug>GitGutterPrevHunk
+  nmap <Leader>ga <Plug>GitGutterStageHunk
 
   Plugin 'tpope/vim-commentary'
   xmap <leader>/ <Plug>Commentary

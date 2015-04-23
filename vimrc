@@ -393,6 +393,7 @@ if count(g:vimified_packages, 'coding')
   map ]h <Plug>GitGutterNextHunk
   map [h <Plug>GitGutterPrevHunk
   nmap <Leader>ga <Plug>GitGutterStageHunk
+  let g:gitgutter_map_keys = 0
 
   Plugin 'tpope/vim-commentary'
   xmap <leader>/ <Plug>Commentary

@@ -411,7 +411,7 @@ if count(g:vimified_packages, 'coding')
     %s/\s\+$//e
     call setpos('.', save_cursor)
   endfunction
-  autocmd BufWritePre *.rb,*.yml,*.js,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml,*.coffee call StripTrailingWhitespace()
+  autocmd BufWritePre *.rb,*.yml,*.js,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml,*.coffee,*.jsx call StripTrailingWhitespace()
 
   Plugin 'scrooloose/syntastic'
   let g:syntastic_enable_signs=1
@@ -421,6 +421,7 @@ if count(g:vimified_packages, 'coding')
   let g:syntastic_check_on_wq=0
   let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [] }
   let g:syntastic_stl_format = '%E{%e errors}%B{, }%W{%w warnings}'
+  let g:syntastic_javascript_checkers = ['eslint']
 
   function! s:syntastic()
     SyntasticCheck

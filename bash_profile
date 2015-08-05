@@ -14,7 +14,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 # Editor
 # ---------------------
 # set the default editor
-export EDITOR="mvim"
+export EDITOR="vim"
 
 # ---------------------
 # Postgres

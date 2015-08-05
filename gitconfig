@@ -26,7 +26,7 @@
 [color]
   ui = true
 [core]
-  editor = /usr/bin/vim
+  editor = vim
   excludesfile = ~/.gitignore_global
 [merge]
   ff = only

@@ -736,6 +736,15 @@ cabbrev Tabe tabe
 :noremap <leader>v :vsp<CR>
 :noremap <leader>h :split<CR>
 
+" create vres command
+function! VerticalResize(size)
+  exec ':vertical resize' . a:size
+endfunction
+
+if !exists(":Vres")
+  com -nargs=1 Vres call VerticalResize(<f-args>)
+endif
+
 " opens an edit command with the path of the currently edited file filled in
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 

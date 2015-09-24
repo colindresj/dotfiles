@@ -50,10 +50,13 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'general')
-  Plugin 'regreplop.vim'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-unimpaired'
   Plugin 'tpope/vim-vinegar'
+  Plugin 'christoomey/vim-tmux-navigator'
+
+  let g:tmux_navigator_save_on_switch = 1
+
   Plugin 'yegappan/mru'
   nnoremap <silent> <leader>mru :MRU<CR>
 

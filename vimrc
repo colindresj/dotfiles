@@ -54,6 +54,8 @@ if count(g:vimified_packages, 'general')
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-unimpaired'
   Plugin 'tpope/vim-vinegar'
+  Plugin 'yegappan/mru'
+  nnoremap <silent> <leader>mru :MRU<CR>
 
   Plugin 'terryma/vim-multiple-cursors'
   let g:multi_cursor_use_default_mapping=0

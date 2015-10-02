@@ -10,6 +10,7 @@ alias b5="cd ../../../../.."
 alias reload="source ~/.bash_profile"
 alias make_test="mkdir ~/Desktop/testing && cd $_"
 alias be="bundle exec"
+alias k="clear"
 
 # OSX
 alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"

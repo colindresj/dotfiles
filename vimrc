@@ -558,7 +558,7 @@ if count(g:vimified_packages, 'rspec')
     :normal ==
   endfunction
   :command! PromoteToLet :call PromoteToLet()
-  map <leader>p :PromoteToLet<cr>
+  map <leader>pt :PromoteToLet<cr>
 endif
 
 " Package: Javascript
@@ -759,9 +759,9 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " opens a tab edit command with the path of the currently edited file filled in
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-" make Y consistent with D and C
-map Y y$
-map <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
+" copy/paste from system register
+vmap <silent><leader>yy "*y<CR>
+map <silent><leader>pp "*p<CR>
 
 " copy current file path to system pasteboard
 map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>

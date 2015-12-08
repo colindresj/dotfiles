@@ -66,18 +66,14 @@ bind r source-file ~/.tmux.conf \; display " Reloaded!"
 
 # Set mouse mode on with prefix + m
 bind m \
-   set -g mode-mouse on \;\
-   set -g mouse-resize-pane on \;\
-   set -g mouse-select-pane on \;\
-   set -g mouse-select-window on \;\
+   set -g mouse-utf8 on \;\
+   set -g mouse on \;\
    display "Mouse: ON"
 
 # Set mouse mode off with prefix + M
 bind M \
-   set -g mode-mouse off \;\
-   set -g mouse-resize-pane off \;\
-   set -g mouse-select-pane off \;\
-   set -g mouse-select-window off \;\
+   set -g mouse-utf8 off \;\
+   set -g mouse off \;\
    display "Mouse: OFF"
 
 # Vi mode

@@ -38,6 +38,12 @@ setw -g automatic-rename
 bind v split-window -h -p 50 -c "#{pane_current_path}"
 bind h split-window -p 50 -c "#{pane_current_path}"
 
+# Resize panes, vim style
+bind - resize-pane -D 10
+bind + resize-pane -U 10
+bind < resize-pane -L 10
+bind > resize-pane -R 10
+
 # Easier and faster switching between next/prev window
 # Hold down control, then prefix + , or .
 bind C-, previous-window
@@ -107,7 +113,7 @@ set -g message-bg colour98
 set -g message-fg colour15
 set -g message-attr bold
 
-# Ht the active window
+# Highlight the active window
 setw -g window-status-current-bg colour241
 setw -g window-status-current-fg colour15
 setw -g window-status-current-format " #I #W "

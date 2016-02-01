@@ -22,8 +22,8 @@ endif
 "
 if ! exists('g:vimified_packages')
   let g:vimified_packages = ['general', 'fancy', 'coding', 'indent', 'ruby',
-        \ 'rails', 'rspec', 'javascript', 'clojure', 'ctags', 'snippets',
-        \ 'colour']
+      \ 'rails', 'rspec', 'javascript', 'elm', 'clojure', 'ctags', 'snippets',
+      \ 'colour']
 endif
 
 " Vundle
@@ -574,6 +574,13 @@ if count(g:vimified_packages, 'javascript')
   au BufNewFile,BufRead *.json set filetype=javascript
 
   let g:mustache_abbreviations = 1
+endif
+
+" Package: Elm
+"
+"""""""""""""""""""""""""""""""""""""""
+if count(g:vimified_packages, 'elm')
+  Plugin 'lambdatoast/elm.vim'
 endif
 
 " Package: Clojure

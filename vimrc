@@ -54,6 +54,7 @@ if count(g:vimified_packages, 'general')
   Plugin 'tpope/vim-unimpaired'
   Plugin 'tpope/vim-vinegar'
   Plugin 'christoomey/vim-tmux-navigator'
+  Plugin 'tmux-plugins/vim-tmux-focus-events'
 
   let g:tmux_navigator_save_on_switch = 1
 

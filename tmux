@@ -83,7 +83,7 @@ bind M \
    display "Mouse: OFF"
 
 # Vi mode
-bind Space copy-mode
+bind g copy-mode
 bind -t vi-copy v begin-selection
 bind -t vi-copy y copy-selection
 

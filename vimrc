@@ -97,7 +97,7 @@ if count(g:vimified_packages, 'general')
   vmap <Enter> <Plug>(EasyAlign)
   nmap ga <Plug>(EasyAlign)
 
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
   let NERDTreeHijackNetrw = 0
   let g:NERDTreeWinSize = 25
   let g:NERDTreeChDirMode = 2

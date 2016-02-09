@@ -26,13 +26,10 @@ if ! exists('g:vimified_packages')
       \ 'colour']
 endif
 
-" Vundle
+" Plug
 "
 """""""""""""""""""""""""""""""""""""""
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-sensible'
+call plug#begin('~/.vim/bundle')
 
 " Shared Bundles
 let s:shared_bundles = expand($HOME . '/.vimrc.bundles.shared')
@@ -50,25 +47,26 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'general')
-  Plugin 'tpope/vim-repeat'
-  Plugin 'tpope/vim-unimpaired'
-  Plugin 'tpope/vim-vinegar'
-  Plugin 'christoomey/vim-tmux-navigator'
-  Plugin 'tmux-plugins/vim-tmux-focus-events'
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-vinegar'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'tmux-plugins/vim-tmux-focus-events'
 
   let g:tmux_navigator_save_on_switch = 1
 
-  Plugin 'yegappan/mru'
+  Plug 'yegappan/mru', { 'on': 'MRU' }
   nnoremap <silent> <leader>mru :MRU<CR>
 
-  Plugin 'terryma/vim-multiple-cursors'
+  Plug 'terryma/vim-multiple-cursors'
   let g:multi_cursor_use_default_mapping=0
   let g:multi_cursor_next_key='<C-n>'
   let g:multi_cursor_prev_key='<C-p>'
   let g:multi_cursor_skip_key='<C-x>'
   let g:multi_cursor_quit_key='<Esc>'
 
-  Plugin 'epmatsw/ag.vim'
+  Plug 'epmatsw/ag.vim'
   function! AgGrep()
     let command = 'ag -i '.expand('<cword>')
     cexpr system(command)
@@ -85,21 +83,21 @@ if count(g:vimified_packages, 'general')
   map <leader>a :call AgGrep()<CR>
   vmap <leader>a :call AgVisual()<CR>
 
-  Plugin 'tpope/vim-surround'
+  Plug 'tpope/vim-surround'
   " Add $ as a jQuery surround, _ for Underscore/Lodash
   autocmd FileType javascript let b:surround_36 = "$(\r)"
         \ | let b:surround_95 = "_(\r)"
 
-  Plugin 'kana/vim-textobj-user'
-  Plugin 'kana/vim-textobj-line'
-  Plugin 'sjl/gundo.vim'
-  Plugin 'Peeja/vim-cdo'
+  Plug 'kana/vim-textobj-user'
+  Plug 'kana/vim-textobj-line'
+  Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+  Plug 'Peeja/vim-cdo'
 
-  Plugin 'jnegunn/vim-easy-align'
+  Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
   vmap <Enter> <Plug>(EasyAlign)
   nmap ga <Plug>(EasyAlign)
 
-  Plugin 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   let NERDTreeHijackNetrw = 0
   let g:NERDTreeWinSize = 25
   let g:NERDTreeChDirMode = 2
@@ -107,7 +105,7 @@ if count(g:vimified_packages, 'general')
   map \ :NERDTreeToggle<CR>
   map \| :NERDTreeFind<CR>
 
-  Plugin 'kien/ctrlp.vim'
+  Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
   let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
   nnoremap <silent> <leader>f :CtrlP<CR>
   noremap <leader>b :CtrlPBuffer<CR>
@@ -158,7 +156,8 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'fancy')
-  Plugin 'itchyny/lightline.vim'
+  Plug 'itchyny/lightline.vim'
+  Plug 'junegunn/vim-peekaboo'
 
   :set noshowmode " mode is displayed by lightline
   let g:lightline = {
@@ -275,8 +274,8 @@ if count(g:vimified_packages, 'fancy')
     elseif &filetype == 'help'
       call MyMinStatus('V', 'HELP', 0, expand('%:t'), 1)
 
-    elseif &filetype == 'vundle'
-      call MyMinStatus('V', 'VUNDLE', 0, expand('%:t'), 1)
+    elseif &filetype == 'vim-plug'
+      call MyMinStatus('P', 'PLUG', 0, expand('%:t'), 1)
 
     else
       call MyDefault()
@@ -388,24 +387,24 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'coding')
-  Plugin 'tpope/vim-abolish'
+  Plug 'tpope/vim-abolish'
 
-  Plugin 'tpope/vim-fugitive'
+  Plug 'tpope/vim-fugitive'
   map <leader>gb :Gblame<CR>
   map <leader>gs :Gstatus<CR>
 
-  Plugin 'airblade/vim-gitgutter'
+  Plug 'airblade/vim-gitgutter'
   map <leader>gg :GitGutterToggle<CR>
   map ]h <Plug>GitGutterNextHunk
   map [h <Plug>GitGutterPrevHunk
   nmap <Leader>ga <Plug>GitGutterStageHunk
   let g:gitgutter_map_keys = 0
 
-  Plugin 'tpope/vim-commentary'
+  Plug 'tpope/vim-commentary'
   xmap <leader>/ <Plug>Commentary
   nmap <leader>/ <Plug>CommentaryLine
 
-  Plugin 'AndrewRadev/splitjoin.vim'
+  Plug 'AndrewRadev/splitjoin.vim'
   let g:splitjoin_split_mapping = ''
   let g:splitjoin_join_mapping = ''
   nmap Ss :SplitjoinSplit<cr>
@@ -419,7 +418,7 @@ if count(g:vimified_packages, 'coding')
   endfunction
   autocmd BufWritePre *.rb,*.yml,*.js,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml,*.coffee,*.jsx call StripTrailingWhitespace()
 
-  Plugin 'scrooloose/syntastic'
+  Plug 'scrooloose/syntastic'
   let g:syntastic_enable_signs=1
   let g:syntastic_auto_loc_list=2
   let g:syntastic_enable_highlighting=0
@@ -439,18 +438,18 @@ if count(g:vimified_packages, 'coding')
     autocmd BufWritePost *.rb call s:syntastic()
   augroup END
 
-  Plugin 'argtextobj.vim'
-  Plugin 'terryma/vim-expand-region'
+  Plug 'argtextobj.vim'
+  Plug 'terryma/vim-expand-region'
 endif
 
 " Package: Indent
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'indent')
-  Plugin 'michaeljsmith/vim-indent-object'
+  Plug 'michaeljsmith/vim-indent-object'
   let g:indentobject_meaningful_indentation = ['haml', 'sass', 'yaml', 'markdown']
 
-  Plugin 'Yggdroot/indentLine'
+  Plug 'Yggdroot/indentLine'
   let g:indentLine_fileType = ['yaml', 'coffee']
 endif
 
@@ -458,16 +457,16 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'ruby') || count(g:vimified_packages, 'rails')
-  Plugin 'vim-ruby/vim-ruby'
-  Plugin 'tpope/vim-bundler'
-  Plugin 'nelstrom/vim-textobj-rubyblock'
+  Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+  Plug 'tpope/vim-bundler', { 'for': 'ruby' }
+  Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 
   let g:textobj_rubysymbol_no_default_key_mappings = 1
   xmap as <Plug>(textobj-rubysymbol-a)
   omap as <Plug>(textobj-rubysymbol-a)
   xmap is <Plug>(textobj-rubysymbol-i)
   omap is <Plug>(textobj-rubysymbol-i)
-  Plugin 'bootleq/vim-textobj-rubysymbol'
+  Plug 'bootleq/vim-textobj-rubysymbol', { 'for': 'ruby' }
 
   " set question mark to be part of a VIM word. in Ruby it is!
   autocmd FileType ruby set iskeyword=@,48-57,_,?,!,192-255
@@ -488,12 +487,13 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'rails')
-  Plugin 'tpope/vim-rails'
+  Plug 'tpope/vim-rails'
   let g:rails_ctags_arguments='--exclude=".git" --exclude="log" --exclude="doc" --exclude="spec/javascripts/helpers"'
 
-  Plugin 'tpope/vim-haml'
+  Plug 'tpope/vim-haml', { 'for': 'haml' }
 
-  Plugin 'plasticboy/vim-markdown'
+  Plug 'plasticboy/vim-markdown'
+  Plug 'junegunn/vim-xmark', { 'for': 'markdown', 'do': 'make' }
   let g:vim_markdown_folding_disabled=1
 
   autocmd FileType scss set iskeyword=@,48-57,_,-,?,!,192-255
@@ -516,8 +516,8 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'rspec')
-  Plugin 'tpope/vim-dispatch'
-  Plugin 'thoughtbot/vim-rspec'
+  Plug 'tpope/vim-dispatch', { 'for': 'ruby' }
+  Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 
   let g:rspec_command = "Dispatch rspec {spec}"
   map <leader>cs :call RunCurrentSpecFile()<CR>
@@ -566,11 +566,11 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'javascript')
-  Plugin 'kchmck/vim-coffee-script'
-  Plugin 'mustache/vim-mustache-handlebars'
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'kana/vim-textobj-function'
-  Plugin 'thinca/vim-textobj-function-javascript'
+  Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+  Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.handlebars' }
+  Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+  Plug 'kana/vim-textobj-function', { 'for': 'javascript' }
+  Plug 'thinca/vim-textobj-function-javascript', { 'for': 'javascript' }
 
   au BufNewFile,BufRead *.json set filetype=javascript
 
@@ -581,21 +581,22 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'elm')
-  Plugin 'lambdatoast/elm.vim'
+  Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 endif
 
 " Package: Clojure
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'clojure')
-  Plugin 'vim-scripts/VimClojure'
+  Plug 'vim-scripts/VimClojure', { 'for': 'clojure' }
+  Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 endif
 
 " Package: Ctags
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'ctags')
-  Plugin 'folke/AutoTag'
+  Plug 'folke/AutoTag'
 
   let g:autotagExcludeSuffixes="tml.xml.text.txt.vim"
   map <leader>rt :!ctags --extra=+f --exclude=.git --exclude=log --exclude=doc -R *<CR><CR>
@@ -606,8 +607,7 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'snippets')
-  Plugin 'SirVer/ultisnips'
-  Plugin 'honza/vim-snippets'
+  Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
   let g:UltiSnipsExpandTrigger='<tab>'
   let g:UltiSnipsJumpForwardTrigger='<tab>'
@@ -618,12 +618,12 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'colour') || count(g:vimified_packages, 'color')
-  Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+  Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
   :hi TabLineFill term=bold cterm=bold ctermbg=237
 endif
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 syntax on
 

@@ -589,18 +589,19 @@ endif
 """""""""""""""""""""""""""""""""""""""
 if count(g:vimified_packages, 'clojure')
   Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+  Plug 'tpope/vim-classpath', { 'for': 'clojure' }
   Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
   Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
   Plug 'luochen1990/rainbow', { 'for': 'clojure' }
 
-  autocmd FileType clojure let g:rainbow_active = 1
-  autocmd FileType clojure let g:rainbow_conf = {
-                               \   'ctermfgs': ['blue', 'yellow', 'cyan', 'magenta', 'green'],
-                               \   'separately': {
-                               \       '*': 0,
-                               \       'clojure': {}
-                               \   }
-                               \}
+  let g:rainbow_active = 1
+  let g:rainbow_conf = {
+        \   'ctermfgs': ['blue', 'yellow', 'cyan', 'magenta', 'green'],
+        \   'separately': {
+        \       '*': 0,
+        \       'clojure': {}
+        \   }
+        \}
 endif
 
 " Package: Ctags

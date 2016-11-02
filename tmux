@@ -72,13 +72,11 @@ bind r source-file ~/.tmux.conf \; display " Reloaded!"
 
 # Set mouse mode on with prefix + m
 bind m \
-   set -g mouse-utf8 on \;\
    set -g mouse on \;\
    display "Mouse: ON"
 
 # Set mouse mode off with prefix + M
 bind M \
-   set -g mouse-utf8 off \;\
    set -g mouse off \;\
    display "Mouse: OFF"
 
@@ -104,7 +102,6 @@ bind p paste
 
 ## Status bar
 # Style the status bar
-set -g status-utf8 on
 set -g status-interval 5
 set -g status-bg colour236
 set -g status-fg colour15
@@ -149,9 +146,6 @@ set -g visual-activity on
 # client connected to *that window*. Much more reasonable.
 setw -g aggressive-resize on
 
-# Set utf8
-set -g utf8 on
-
 ## tmux plugins
 # prefix + I to install plugins
 # prefix + U to update plugins
@@ -160,7 +154,6 @@ set -g @plugin "tmux-plugins/tpm"
 set -g @plugin "tmux-plugins/tmux-sensible"
 set -g @plugin "tmux-plugins/tmux-copycat"
 set -g @plugin "tmux-plugins/tmux-yank"
-set -g @plugin "tmux-plugins/tmux-urlview"
 set -g @plugin "tmux-plugins/tmux-battery"
 
 # Initialize tmux plugin manager

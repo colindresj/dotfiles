@@ -105,8 +105,9 @@ bind p paste
 set -g status-interval 5
 set -g status-bg colour236
 set -g status-fg colour15
-set -g status-left "#[fg=colour55,bg=colour98,bold] TMUX "
+set -g status-left "#[fg=colour55,bg=colour98,bold] TMUX #{prefix_highlight}"
 set -g status-right "#[fg=colour247]%H:%M #[fg=colour250,bg=colour240] #{battery_percentage} #[fg=colour241,bg=colour252] #S "
+set -g @prefix_highlight_show_copy_mode "on"
 
 # Style messages
 set -g message-bg colour98
@@ -155,6 +156,8 @@ set -g @plugin "tmux-plugins/tmux-sensible"
 set -g @plugin "tmux-plugins/tmux-copycat"
 set -g @plugin "tmux-plugins/tmux-yank"
 set -g @plugin "tmux-plugins/tmux-battery"
+set -g @plugin "tmux-plugins/tmux-prefix-highlight"
+set -g @plugin "tmux-plugins/tmux-urlview"
 
 # Initialize tmux plugin manager
 run "~/.tmux/plugins/tpm/tpm"

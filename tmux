@@ -82,8 +82,8 @@ bind M \
 
 # Vi mode
 bind g copy-mode
-bind -t vi-copy v begin-selection
-bind -t vi-copy y copy-selection
+bind-key -T copy-mode-vi 'v' send-keys -X begin-selection
+bind-key -T copy-mode-vi 'y' send-keys -X copy-pipe-and-cancel pbcopy
 
 # Vim navigator
 is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?$"'

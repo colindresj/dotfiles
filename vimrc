@@ -438,7 +438,7 @@ if count(g:vimified_packages, 'coding')
     autocmd BufWritePost *.rb call s:syntastic()
   augroup END
 
-  Plug 'argtextobj.vim'
+  Plug 'vim-scripts/argtextobj.vim'
   Plug 'terryma/vim-expand-region'
 endif
 

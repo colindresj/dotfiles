@@ -13,7 +13,7 @@
   cob = checkout -b
   cp = cherry-pick --signoff
   delete = !sh -c 'git branch -D $1 && git push origin :$1' -
-  done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake
+  done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1}
   github = remote show origin
   head = git log -n1
   pr = !hub pull-request

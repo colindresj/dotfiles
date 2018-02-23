@@ -1,4 +1,3 @@
-# Hola Bash!
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 # Execute the aliases
@@ -17,13 +16,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 export EDITOR="vim"
 
 # ---------------------
-# Postgres
-# ---------------------
-# Make sure we're pointing to the Postgres App's psql
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
-export PG_USERNAME="JC"
-
-# ---------------------
 # Rbenv
 # ---------------------
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -31,8 +23,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # ---------------------
 # Tab Improvements
 # ---------------------
-bind 'set completion-ignore-case on'
-bind 'set show-all-if-ambiguous on'
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
@@ -54,22 +46,11 @@ export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 
 #----------------------
-# Rails
-# ---------------------
-# Rails composer
-rails_composer() { rails new "$@" -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb; }
-
-#----------------------
 # Nodejs
 # ---------------------
 export NVM_DIR="/Users/$USER/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-
-# ---------------------
-# Cask
-# ---------------------
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # ---------------------
 # Transfer.sh

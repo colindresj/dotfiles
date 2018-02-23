@@ -1,34 +1,22 @@
 # ---------------------
 # General Aliases
 # ---------------------
-alias bash_profile="vim ~/.bash_profile"
 alias ll="ls -la"
 alias rm="rm -i"
 alias b="cd .."
 alias b4="cd ../../../../"
 alias b5="cd ../../../../.."
 alias reload="source ~/.bash_profile"
-alias make_test="mkdir ~/Desktop/testing && cd $_"
 alias be="bundle exec"
 alias k="clear"
 
+# fasd
+alias j="fasd_cd -d"     # cd, same functionality as j in autojump
+alias jj="fasd_cd -d -i" # cd with interactive selection
+
 # OSX
-alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
-alias hide_files="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
-
-# Rails
-alias rc="rails c"
-alias rs="rails s"
-alias rg="rails g"
-
-# Transfer.sh
-alias transfer=transfer
-
-# ---------------------
-# Servers
-# ---------------------
-alias python_server="python -m SimpleHTTPServer"
-alias node_server="http-server"
+alias show-files="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
+alias hide-files="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 
 # ---------------------
 # Local custom aliases

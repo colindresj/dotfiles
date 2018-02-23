@@ -56,13 +56,16 @@ if count(g:vimified_packages, 'general')
 
   let g:tmux_navigator_save_on_switch = 1
 
+  Plug 'plasticboy/vim-markdown'
+  Plug 'junegunn/vim-xmark', { 'for': 'markdown', 'do': 'make' }
+  let g:vim_markdown_folding_disabled=1
+
   Plug 'yegappan/mru', { 'on': 'MRU' }
   nnoremap <silent> <leader>mru :MRU<CR>
 
   Plug 'terryma/vim-multiple-cursors'
   let g:multi_cursor_use_default_mapping=0
   let g:multi_cursor_next_key='<C-n>'
-  let g:multi_cursor_prev_key='<C-p>'
   let g:multi_cursor_skip_key='<C-x>'
   let g:multi_cursor_quit_key='<Esc>'
 
@@ -84,14 +87,15 @@ if count(g:vimified_packages, 'general')
   vmap <leader>a :call AgVisual()<CR>
 
   Plug 'tpope/vim-surround'
+
   " Add $ as a jQuery surround, _ for Underscore/Lodash
   autocmd FileType javascript let b:surround_36 = "$(\r)"
         \ | let b:surround_95 = "_(\r)"
 
   Plug 'kana/vim-textobj-user'
   Plug 'kana/vim-textobj-line'
-  Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-  Plug 'Peeja/vim-cdo'
+
+  Plug 'vim-scripts/Tabbi'
 
   Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
   vmap <Enter> <Plug>(EasyAlign)
@@ -393,12 +397,15 @@ if count(g:vimified_packages, 'coding')
   map <leader>gb :Gblame<CR>
   map <leader>gs :Gstatus<CR>
 
+  Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+
   Plug 'airblade/vim-gitgutter'
   map <leader>gg :GitGutterToggle<CR>
   map ]h <Plug>GitGutterNextHunk
   map [h <Plug>GitGutterPrevHunk
   nmap <Leader>ga <Plug>GitGutterStageHunk
   let g:gitgutter_map_keys = 0
+  set updatetime=75
 
   Plug 'tpope/vim-commentary'
   xmap <leader>/ <Plug>Commentary
@@ -491,10 +498,6 @@ if count(g:vimified_packages, 'rails')
   let g:rails_ctags_arguments='--exclude=".git" --exclude="log" --exclude="doc" --exclude="spec/javascripts/helpers"'
 
   Plug 'tpope/vim-haml', { 'for': 'haml' }
-
-  Plug 'plasticboy/vim-markdown'
-  Plug 'junegunn/vim-xmark', { 'for': 'markdown', 'do': 'make' }
-  let g:vim_markdown_folding_disabled=1
 
   autocmd FileType scss set iskeyword=@,48-57,_,-,?,!,192-255
 

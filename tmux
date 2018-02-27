@@ -6,6 +6,10 @@ bind Space send-prefix
 ## Kill tmux
 bind Q confirm-before kill-server
 
+
+## Fix LSUserRole issue
+set-option -g default-command "which reattach-to-user-namespace > /dev/null && reattach-to-user-namespace -l $SHELL || $SHELL"
+
 ## Session bindings
 # Choose session
 bind S choose-session

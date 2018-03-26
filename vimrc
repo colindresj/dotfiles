@@ -106,6 +106,7 @@ if count(g:vimified_packages, 'general')
   let g:NERDTreeWinSize = 25
   let g:NERDTreeChDirMode = 2
   let NERDTreeShowHidden = 1
+  let NERDTreeIgnore = ['\.DS_Store$', '\.log$', '\.iml$', '\.git$']
   map \ :NERDTreeToggle<CR>
   map \| :NERDTreeFind<CR>
 
